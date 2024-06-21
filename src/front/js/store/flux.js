@@ -40,9 +40,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
 				const demo = store.demo.map((elm, i) => {
 					if (i === index) elm.background = color;
 					return elm;
@@ -95,6 +92,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (response.ok) {
 						console.log(data);
 					setStore({ auth: true });
+					console.log('auth',store.auth)
 						
 						localStorage.setItem('token', data.access_token);
 						return true;
@@ -122,7 +120,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					});
 			
-					console.log(response); // Depura la respuesta completa del servidor
+					console.log(response); 
 			
 					if (response.status === 401) {
 						console.error('Unauthorized: User not authenticated');
@@ -176,7 +174,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			logout: () => {
+				const store = getStore();
 				localStorage.removeItem("token")
+				setStore({ auth: false });
+					console.log('auth',store.auth)
 				
 
 
