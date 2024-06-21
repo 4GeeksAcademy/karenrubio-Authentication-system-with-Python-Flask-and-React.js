@@ -8,6 +8,8 @@ export const Profile = () => {
     const { store, actions } = useContext(Context);
     const [profile, setProfile] = useState(null);
     const [error, setError] = useState(null);
+  
+
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -31,9 +33,10 @@ export const Profile = () => {
 
     return (
         <div className="profile-container container">
-            <h1>Profile</h1>
+            <h1 className="text-white-50 m-5">Profile</h1>
             <div className="profile-info">
-                <p><strong>Email:</strong> {profile.logged_in_as}</p>
+                <h2 className="text-white">WELCOME BACK</h2>   
+                <p className="text-white-50 m-3"><i className="bi bi-person-square text-white-50"></i><strong className="text-white-50 m-3">Email:</strong> {profile.logged_in_as}</p>
             </div>
         </div>
     );
