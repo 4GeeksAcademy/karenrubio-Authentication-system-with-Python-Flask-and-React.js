@@ -40,7 +40,7 @@ body {
 .wrapper .form-box.login{
     left: 0;
     padding: 0 60px 0 40px;
-    display: none;
+    /* display: none; */
 
 
 }
@@ -175,7 +175,7 @@ body {
     right: 0;
     text-align: right;
     padding: 0 40px 60px 150px;
-    display: none;
+    /* display: none; */
 }
 
 .info-text h2 {
@@ -198,8 +198,8 @@ body {
     height: 600px;
     background: linear-gradient(45deg, #081b29, #0ef);
     border-bottom: 3px solid #0ef;
-    /* transform: rotate(10deg) skewY(40deg); */
-    transform: rotate(0) skewY(0);
+    transform: rotate(10deg) skewY(40deg);
+    /* transform: rotate(0) skewY(0); */
 
     transform-origin: bottom right;
 }
@@ -212,8 +212,8 @@ body {
     height: 700px;
     background: #081b29;
     border-top: 3px solid #0ef;
-    /* transform: rotate(10deg) skewY(40deg); */
-    transform: rotate(-11) skewY(-41deg);
+    transform: rotate(10deg) skewY(40deg);
+    /* transform: rotate(-11) skewY(-41deg); */
     transform-origin: bottom left;
 }
 

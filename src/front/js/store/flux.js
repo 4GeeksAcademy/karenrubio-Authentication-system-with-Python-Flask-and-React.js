@@ -94,7 +94,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const data = await response.json();
 					if (response.ok) {
 						console.log(data);
-						// Guarda el token en localStorage
+					setStore({ auth: true });
+						
 						localStorage.setItem('token', data.access_token);
 						return true;
 					}
@@ -134,12 +135,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 			
 					if (!response.ok) {
-						// Manejo de otros errores HTTP
+						
 						throw new Error(`HTTP error! Status: ${response.status}`);
 					}
 			
 					const data = await response.json();
-					console.log(data); // Depura los datos recibidos
+					console.log(data); 
 			
 					return data;
 				} catch (error) {

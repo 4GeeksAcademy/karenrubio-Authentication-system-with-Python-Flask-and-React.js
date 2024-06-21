@@ -8,6 +8,16 @@ export const Profile = () => {
     const { store, actions } = useContext(Context);
     const [profile, setProfile] = useState(null);
     const [error, setError] = useState(null);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
+  	useEffect(() => {
+		const token = localStorage.getItem('token');
+		if (token && store.auth) {
+			setIsAuthenticated(true);
+		} else {
+			setIsAuthenticated(false);
+		}
+	}, [isAuthenticated]);
 
     useEffect(() => {
         const fetchProfile = async () => {

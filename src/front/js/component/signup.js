@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/signup.css"
+import "../../styles/login.css"
 
 
 
@@ -29,44 +29,59 @@ export const SignUp = () => {
 
     return (
         <>
-            <nav className="signup-navbar navbar  m-5" style={{background: "transparent", }}>
+            {/* <nav className="signup-navbar navbar  m-5" style={{background: "transparent", }}>
                 <div className="ml-auto">
                     <Link to="/login">
                         <span className="signup-navbar-brand navbar-brand mb-0 h1" style={{fontSize: "50px"}}>Login</span>
                     </Link>
                 </div>
-            </nav>
-            <form className="signup-container container" onSubmit={handleSubmit}>
-                <h1>Sign Up</h1>
-                {error && <div className="alert alert-danger">{error}</div>} 
-                <div className="signup-form-floating form-floating mb-3">
-                    <input 
-                        onChange={(e) => setUser({...user, email: e.target.value})} 
-                        type="email" 
-                        className="signup-form-control form-control" 
-                        name="email" 
-                        value={user.email} 
-                        id="inputEmail" 
-                        placeholder="Enter Email" 
-                    />
-                    <label htmlFor="inputEmail">Email </label>
+            </nav> */}
+             <div className="wrapper m-5">
+                <span className="bg-animate"></span>
+                <span className="bg-animate2"></span>
+
+                <div className="form-box login">
+                    <form className="" onSubmit={handleSubmit}>
+                        <h2>Sign Up</h2>
+                        {error && <div className="alert alert-danger">{error}</div>} 
+                        <div className="input-box">
+                            <input 
+                                onChange={(e) => setUser({...user, email: e.target.value})} 
+                                type="email"  
+                                name="email" 
+                                value={user.email} 
+                                id="inputEmail" 
+                                placeholder="Enter Email" 
+                            />
+                            <label htmlFor="inputEmail">Email </label>
+                        </div>
+                        <div className="input-box">
+                            <input 
+                                onChange={(e) => setUser({...user, password: e.target.value})} 
+                                type="password"  
+                                name="password" 
+                                value={user.password} 
+                                id="inputPassword" 
+                                placeholder="Enter Password" 
+                            />
+                            <label htmlFor="inputPassword">Password</label>
+                        </div>
+                            <button type="submit" className="btn">Signup</button>
+                            <div className="logreg-link">
+                            <p>already have an account?
+                            <Link to="/login">
+                                 Login
+                                {/* <span className="register-link login-navbar-brand navbar-brand mb-0 h1" style={{ fontSize: "50px" }}>Signup</span> */}
+                            </Link>
+                            </p>
+                        </div>
+                    </form>
                 </div>
-                <div className="signup-form-floating form-floating mb-3">
-                    <input 
-                        onChange={(e) => setUser({...user, password: e.target.value})} 
-                        type="password" 
-                        className="signup-form-control form-control" 
-                        name="password" 
-                        value={user.password} 
-                        id="inputPassword" 
-                        placeholder="Enter Password" 
-                    />
-                    <label htmlFor="inputPassword">Password</label>
+                <div className="info-text login">
+                    <h2>WELCOME BACK!</h2>
+                    <p>lorem ipsum, dolor sit amet consectetur adipisicing </p>
                 </div>
-                <div className="signup-submit">
-                    <button type="submit" className="signup-btn btn btn-primary">Signup</button>
                 </div>
-            </form>
         </>
     );
 };

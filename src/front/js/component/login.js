@@ -32,7 +32,7 @@ export const Login= () => {
                     </Link>
                 </div>
             </nav> */}
-            <div className="wrapper">
+            <div className="wrapper m-5">
                 <span className="bg-animate"></span>
                 <span className="bg-animate2"></span>
 
